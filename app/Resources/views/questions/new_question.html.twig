@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block content %}
+    <p>{{ 'create_new_question'|trans }}</p>
+
+    {{ form(form) }}
+
+{% endblock %}

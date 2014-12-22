@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+
+    <p>{{ question.question }}</p>
+
+    <p>
+        <a href="{{ path('guess', {'question': question.id}) }}">{{ 'yes'|trans }}</a>
+        {% if question.nextQuestionNo is null %}
+            <a href="{{ path('new_question', {'question': question.id, 'answeredYes': 0}) }}">
+                {{ 'no'|trans }}
+            </a>
+        {% else %}
+            <a href="{{ path('game', {'question': question.nextQuestionNo.id}) }}">{{ 'no'|trans }}</a>
+        {% endif %}
+    </p>
+
+{% endblock %}

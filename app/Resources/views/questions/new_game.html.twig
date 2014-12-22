@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+
+    <p>{{ 'new_game_message'|trans }}</p>
+
+    <a href="{{ path('game_start') }}">{{ 'start'|trans }}</a>
+
+{% endblock %}
